@@ -1,0 +1,238 @@
+%%%%%%%%%%%%%%%%
+%%  PREAMBLE  %%
+%%%%%%%%%%%%%%%%
+
+\documentclass[11pt, a4paper, twoside]{book}
+% Use option ``fleqn'' for left-aligned display formulae
+
+\newcommand{\dissafterdefense}{0}
+% Set to 1 for the final version AFTER the defense, because only after the defense is the second page (which lists the date of the defense and the names of the supervisors) to be included!
+% The same applies to the ``Tag der Promotion'' note on the title page.
+
+\newcommand{\disstitle}
+	{Your Probably Pretty Long \\ Dissertation Title}
+\newcommand{\dissauthor}
+	{Your Full Name}
+\newcommand{\dissbornin}
+	{Your Place of Birth}
+\newcommand{\dissyear}
+	{\the\year}
+\newcommand{\dissdean}
+	{Prof.~Dr. Jürgen von Hagen}
+\newcommand{\dissfirstsupervisor}
+	{Prof.~Dr. Your First Supervisor}
+\newcommand{\disssecondsupervisor}
+	{Prof.~Dr. Your Second Supervisor}
+\newcommand{\dissdatedefense}
+	{Date of Your Defense}
+
+\input{0_0_Preamble/Preamble_Fundamental_packages}
+\hypersetup{pdftitle={\disstitle}, pdfauthor={\dissauthor}}
+\input{0_0_Preamble/Preamble_Page_layout_dissertation}
+\input{0_0_Preamble/Preamble_Page_layout_general}
+\input{0_0_Preamble/Preamble_Fonts_Charter_FiraSans}
+\input{0_0_Preamble/Preamble_Sansserif_math}
+\input{0_0_Preamble/Preamble_BibLaTeX_AER}
+\input{0_0_Preamble/Preamble_Commenting_and_highlighting}
+% \input{0_0_Preamble/Preamble_Commenting_off}
+\input{0_0_Preamble/Preamble_Miscellaneous}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  LOAD THE .BIB FILES  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\bibliography{Chapter1/refs.bib}
+\addbibresource{Chapter2/refs.bib}
+\addbibresource{Chapter3/refs.bib}
+
+
+\usepackage{tikz}
+\usepackage{rotating}
+
+\usetikzlibrary{decorations.pathreplacing}
+
+%%%%%%%%%%%%
+%%  BODY  %%
+%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{refsection}
+
+	\input{Frontmatter}
+	% use \input here, because \subimport prevents generation of the ToC
+
+	% Any citation occurring in a figure or table caption has to be included here!
+	% Otherwise it will not appear correctly in the list of figures/tables.
+	% ==>
+	\nocite{Gerhardt2017}
+	% <==
+
+\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  INTRODUCTION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{refsection}
+
+	\chapter*{Introduction}
+	\label{diss:intro}
+	\addcontentsline{toc}{chapter}{Introduction}
+	\chaptermark{Introduction}
+
+	\input{Introduction}
+
+	\begin{refcontext}[sorting=nyt]
+		% Sort BIBLIOGRAPHY by alphabet (while CITATIONS are sorted by year)
+		\phantomsection
+		\printbibliography[heading=subbibliography]
+	\end{refcontext}
+\end{refsection}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  CHAPTER 1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{refsection}
+
+	% Save old footnote definition
+	\makeatletter
+	\renewcommand{\@makefntext}[1]{\@makefntextorig{#1}}
+	\makeatother
+	\chapter[Chapter1 Title]{Chapter1 Title%
+	  % \setcounter{footnote}{1}\textsuperscript{\Large\fnsymbol{footnote}}%
+	}
+	\label{diss:chapter1}
+	
+	% Use footnote symbols instead of numbers
+	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+	% \footnotetext[1]{\:\protect\input{Chapter1/Acknowledgments}}
+	
+	% Switch back to the original footnote definition
+	\renewcommand{\thefootnote}{\thefootnoteorig}
+	\makeatletter
+	\renewcommand{\@makefntext}[1]{\@makefntextcustom{#1}}
+	\renewcommand{\@makefnmark}{\@makefnmarkorig}
+	\makeatother
+	\setcounter{footnote}{0}
+
+	\input{Chapter1/Introduction}
+
+	\begin{subappendices}
+		\label{sec:appendix1}
+		\FloatBarrier
+		\input{Chapter1/appendices/appendix1.tex}
+		\clearpage
+		% \clearpage must be issued INSIDE the subappendices environment
+		% for the pagestyle to be applied correctly
+	\end{subappendices}
+
+	\begin{refcontext}[sorting=nyt]
+		% Sort BIBLIOGRAPHY by alphabet (while CITATIONS are sorted by year)
+		\phantomsection
+		\printbibliography[heading=subbibliography]
+	\end{refcontext}
+
+\end{refsection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  CHAPTER 2  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{refsection}
+	% Save old footnote definition
+	\makeatletter
+	\renewcommand{\@makefntext}[1]{\@makefntextorig{#1}}
+	\makeatother
+	\chapter
+	 [Chapter2 Title]
+	 {Chapter2 Title%
+	  % \setcounter{footnote}{1}\textsuperscript{\Large\fnsymbol{footnote}} % footnote mark for acknowledgements
+	 }
+	\label{diss:chapter2}
+	% Use footnote symbols instead of numbers
+	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+	% \footnotetext[1]{\:\protect\input{Chapter2/Acknowledgments}}
+	% Switch back to the original footnote definition
+	\renewcommand{\thefootnote}{\thefootnoteorig}
+	\makeatletter
+	\renewcommand{\@makefntext}[1]{\@makefntextcustom{#1}}
+	\renewcommand{\@makefnmark}{\@makefnmarkorig}
+	\makeatother
+	\setcounter{footnote}{0}
+
+	% \counterwithin{figure}{chapter}%
+	% \counterwithin{table}{chapter}%
+	% \counterwithin{equation}{chapter}%
+
+	\vspace{-\bigskipamount}\textsf{\textit{Joint with ...}} \bigskip
+
+	\input{Chapter2/Introduction}
+
+	\begin{subappendices}
+		\label{sec:appendix2}
+		\FloatBarrier
+		\input{Chapter2/appendices/appendix1}
+		\FloatBarrier
+		\clearpage
+		% \clearpage must be issued INSIDE the subappendices environment
+		% for the pagestyle to be applied correctly
+	\end{subappendices}
+
+	\begin{refcontext}[sorting=nyt]
+		% Sort BIBLIOGRAPHY by alphabet (while CITATIONS are sorted by year)
+		\phantomsection
+		\printbibliography[heading=subbibliography]
+	\end{refcontext}
+
+\end{refsection}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  CHAPTER 3  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{refsection}
+	% Save old footnote definition
+	\makeatletter
+	\renewcommand{\@makefntext}[1]{\@makefntextorig{#1}}
+	\makeatother
+	\chapter
+	 [Chapter3 Title]
+	 {Chapter3 Title%
+	  % \setcounter{footnote}{1}\textsuperscript{\Large\fnsymbol{footnote}}%
+	 }
+	\label{diss:chapter3}
+	% Use footnote symbols instead of numbers
+	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+	\footnotetext[1]{\:\protect\input{Chapter3/Acknowledgments}}
+	% Switch back to the original footnote definition
+	\renewcommand{\thefootnote}{\thefootnoteorig}
+	\makeatletter
+	\renewcommand{\@makefntext}[1]{\@makefntextcustom{#1}}
+	\renewcommand{\@makefnmark}{\@makefnmarkorig}
+	\makeatother
+	\setcounter{footnote}{0}
+	\vspace{-\bigskipamount}\textsf{\textit{Joint with ...}} \bigskip
+
+	\input{Chapter3/Introduction.tex}
+
+	\begin{subappendices}
+		\label{sec:appendix}
+		% analogous to chapters 1 and 2
+
+		\clearpage
+		% \clearpage must be issued INSIDE the subappendices environment
+		% for the pagestyle to be applied correctly
+	\end{subappendices}
+
+	\begin{refcontext}[sorting=nyt]
+		% Sort BIBLIOGRAPHY by alphabet (while CITATIONS are sorted by year)
+		\phantomsection
+		\printbibliography[heading=subbibliography]
+	\end{refcontext}
+
+\end{refsection}
+
+
+\end{document}
