@@ -26,25 +26,25 @@
 \newcommand{\dissdatedefense}
 	{Date of Your Defense}
 
-\input{0_0_Preamble/Preamble_Fundamental_packages}
+\input{../0_0_Preamble/Preamble_Fundamental_packages}
 \hypersetup{pdftitle={\disstitle}, pdfauthor={\dissauthor}}
-\input{0_0_Preamble/Preamble_Page_layout_dissertation}
-\input{0_0_Preamble/Preamble_Page_layout_general}
-\input{0_0_Preamble/Preamble_Fonts_Charter_FiraSans}
-\input{0_0_Preamble/Preamble_Sansserif_math}
-\input{0_0_Preamble/Preamble_BibLaTeX_AER}
-\input{0_0_Preamble/Preamble_Commenting_and_highlighting}
-% \input{0_0_Preamble/Preamble_Commenting_off}
-\input{0_0_Preamble/Preamble_Miscellaneous}
+\input{../0_0_Preamble/Preamble_Page_layout_dissertation}
+\input{../0_0_Preamble/Preamble_Page_layout_general}
+\input{../0_0_Preamble/Preamble_Fonts_Charter_FiraSans}
+\input{../0_0_Preamble/Preamble_Sansserif_math}
+\input{../0_0_Preamble/Preamble_BibLaTeX_AER}
+\input{../0_0_Preamble/Preamble_Commenting_and_highlighting}
+% \input{../0_0_Preamble/Preamble_Commenting_off}
+\input{../0_0_Preamble/Preamble_Miscellaneous}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  LOAD THE .BIB FILES  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\bibliography{Chapter1/refs.bib}
-\addbibresource{Chapter2/refs.bib}
-\addbibresource{Chapter3/refs.bib}
+\bibliography{../Chapter1/refs.bib}
+\addbibresource{../Chapter2/refs.bib}
+\addbibresource{../Chapter3/refs.bib}
 
 
 \usepackage{tikz}
@@ -107,7 +107,7 @@
 	
 	% Use footnote symbols instead of numbers
 	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-	% \footnotetext[1]{\:\protect\input{Chapter1/Acknowledgments}}
+	% \footnotetext[1]{\:\protect\input{../Chapter1/Acknowledgments}}
 	
 	% Switch back to the original footnote definition
 	\renewcommand{\thefootnote}{\thefootnoteorig}
@@ -117,12 +117,12 @@
 	\makeatother
 	\setcounter{footnote}{0}
 
-	\input{Chapter1/Introduction}
+	\input{../Chapter1/Introduction}
 
 	\begin{subappendices}
 		\label{sec:appendix1}
 		\FloatBarrier
-		\input{Chapter1/appendices/appendix1.tex}
+		\input{../Chapter1/appendices/appendix1.tex}
 		\clearpage
 		% \clearpage must be issued INSIDE the subappendices environment
 		% for the pagestyle to be applied correctly
@@ -153,7 +153,7 @@
 	\label{diss:chapter2}
 	% Use footnote symbols instead of numbers
 	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-	% \footnotetext[1]{\:\protect\input{Chapter2/Acknowledgments}}
+	% \footnotetext[1]{\:\protect\input{../Chapter2/Acknowledgments}}
 	% Switch back to the original footnote definition
 	\renewcommand{\thefootnote}{\thefootnoteorig}
 	\makeatletter
@@ -166,14 +166,14 @@
 	% \counterwithin{table}{chapter}%
 	% \counterwithin{equation}{chapter}%
 
-	\vspace{-\bigskipamount}\textsf{\textit{Joint with ...}} \bigskip
+	\vspace{-3\bigskipamount}\textsf{\textit{\Large Joint with ...}} \bigskip
 
-	\input{Chapter2/Introduction}
+	\input{../Chapter2/Introduction}
 
 	\begin{subappendices}
 		\label{sec:appendix2}
 		\FloatBarrier
-		\input{Chapter2/appendices/appendix1}
+		\input{../Chapter2/appendices/appendix1}
 		\FloatBarrier
 		\clearpage
 		% \clearpage must be issued INSIDE the subappendices environment
@@ -205,7 +205,7 @@
 	\label{diss:chapter3}
 	% Use footnote symbols instead of numbers
 	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-	\footnotetext[1]{\:\protect\input{Chapter3/Acknowledgments}}
+	\footnotetext[1]{\:\protect\input{../Chapter3/Acknowledgments}}
 	% Switch back to the original footnote definition
 	\renewcommand{\thefootnote}{\thefootnoteorig}
 	\makeatletter
@@ -213,9 +213,9 @@
 	\renewcommand{\@makefnmark}{\@makefnmarkorig}
 	\makeatother
 	\setcounter{footnote}{0}
-	\vspace{-\bigskipamount}\textsf{\textit{Joint with ...}} \bigskip
+	\vspace{-3\bigskipamount}\textsf{\textit{\Large Joint with ...}} \bigskip
 
-	\input{Chapter3/Introduction.tex}
+	\input{../Chapter3/Introduction.tex}
 
 	\begin{subappendices}
 		\label{sec:appendix}

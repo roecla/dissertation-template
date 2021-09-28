@@ -19,6 +19,8 @@
 *.bcf 
 *.blg
 *.run.xml 
+*.upa 
+*.upb
 
 
 # beamer
