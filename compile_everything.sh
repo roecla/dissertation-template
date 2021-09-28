@@ -1,24 +1,19 @@
+
+# Create build folders
+mkdir -p bld/CV && mkdir -p bld/presentation && mkdir -p bld/dissertation 
+
 # Compile the CV
-cd CV/ && 
-mkdir -p out &&
-pdflatex -output-directory=out CV.tex &&
-cp out/CV.pdf ../CV.pdf && 
-cd ..
+pdflatex -output-directory=bld/CV/ CV/CV.tex &&
+cp bld/CV/CV.pdf CV.pdf && 
 
 # Compile the Presentation
-cd Presentation/ && 
-mkdir -p out &&
-pdflatex -output-directory=out presentation.tex && 
-biber out/presentation && 
-pdflatex -output-directory=out presentation.tex && 
-cp out/presentation.pdf ../presentation.pdf && 
-cd ..
+pdflatex -output-directory=bld/presentation/ Presentation/presentation.tex && 
+biber bld/presentation/presentation && 
+pdflatex -output-directory=bld/presentation/ Presentation/presentation.tex && 
+cp bld/presentation/presentation.pdf presentation.pdf && 
 
 # Compile the Dissertation
-cd Dissertation/ && 
-mkdir -p out &&
-pdflatex -output-directory=out dissertation.tex && 
-biber out/dissertation && 
-pdflatex -output-directory=out dissertation.tex && 
-cp out/dissertation.pdf ../dissertation.pdf && 
-cd ..
+pdflatex -output-directory=bld/dissertation/ Dissertation/dissertation.tex && 
+biber bld/dissertation/dissertation && 
+pdflatex -output-directory=bld/dissertation Dissertation/dissertation.tex && 
+cp bld/dissertation/dissertation.pdf dissertation.pdf 
