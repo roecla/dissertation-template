@@ -15,6 +15,10 @@
 *.fdb_latexmk
 *.synctex.gz
 *.pdf
+*.bbl 
+*.bcf 
+*.blg
+*.run.xml 
 
 
 # beamer

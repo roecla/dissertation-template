@@ -1,0 +1,99 @@
+% !TeX TXS-program:compile = txs:///pdflatex/
+% !BIB program = biber
+
+\documentclass[aspectratio=169, 11pt, t]{beamer}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+
+\definecolor{myLightGray}{RGB}{191,191,191}
+\definecolor{myGray}{RGB}{160,160,160}
+\definecolor{myDarkGray}{RGB}{144,144,144}
+\definecolor{myDarkRed}{RGB}{167,114,115}
+\definecolor{myRed}{RGB}{255,58,70}
+\definecolor{myGreen}{RGB}{0,255,71}
+\definecolor{shadecolor}{rgb}{0.9, 0.9, 0.9}
+
+\input{Preamble_Presentation}
+
+\AtBeginSection[]{%
+  \begin{frame}[plain, noframenumbering, c]
+      \centering
+      \huge\alert{\insertsection}
+  \end{frame}}
+
+
+\title{Title of Your Dissertation}
+
+\author[Your Last Name]{%
+	Your Full Name \\% \inst{a,\,c}
+}
+
+% \institute{%
+% 	\inst{a}\,Bonn Graduate School of Economics \and
+% 	\inst{b}\,Collaborative Research Center Transregio~224%
+% } % Institution(s)
+
+\date{%
+	Disputation \\[\medskipamount]
+	\normalfont{Bonn Graduate School of Economics} \\[\medskipamount]
+	\textcolor{blue}{Date Of Your Defense} % \textmd{\today}%
+}
+
+
+
+% =====================================================================================
+% PRESENTATION
+% =====================================================================================
+
+\begin{document}
+
+% Title Page 
+
+\begin{frame}[standout, noframenumbering]{~}
+	\titlepage
+\end{frame}
+
+% Overview Over Chapters 
+
+\begin{frame}{Introduction / Overview over Chapters}
+	\begin{itemize}
+		\item \ldots
+	\end{itemize}
+\end{frame}
+
+% Table of Contents
+\begin{frame}[c]\frametitle{Outline}
+     \tableofcontents[hideallsubsections]
+ \end{frame} 
+
+\input{../Chapter1/Slides.tex}
+
+\input{../Chapter2/Slides.tex}
+
+\input{../Chapter3/Slides.tex}
+
+
+
+% end slide
+{
+\setbeamercolor{background canvas}{bg=black}
+
+\begin{frame}[noframenumbering, plain, c]
+  \Huge{\color{white} \textbf{\centerline{The End}}}
+\end{frame}
+}
+
+\section*{References}
+
+\begin{frame}\frametitle{References}
+	\printbibliography
+\end{frame}
+ 
+
+\backupbegin
+   \input{presentation_backup.tex}
+\backupend
+
+
+\end{document}
