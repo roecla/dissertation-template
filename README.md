@@ -13,10 +13,9 @@ The usual layout of a dissertation:
 - lists of figures and tables
 
 - introduction (2-3 pages)
-- 1st chapter (abstract, main text, appendix, references) -
-  2nd chapter (abstract, main text, appendix, references)
-  - 3rd chapter (abstract, main
-    text, appendix, references)
+- 1st chapter (abstract, main text, appendix, references)
+- 2nd chapter (abstract, main text, appendix, references)
+- 3rd chapter (abstract, main text, appendix, references)
 
 Once you want to turn in your thesis the process will be the following:
 

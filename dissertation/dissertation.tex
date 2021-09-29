@@ -61,7 +61,7 @@
 
 \begin{refsection}
 
-	\input{dissertation/Frontmatter}
+	\input{dissertation/frontmatter}
 	% use \input here, because \subimport prevents generation of the ToC
 
 	% Any citation occurring in a figure or table caption has to be included here!
@@ -82,7 +82,7 @@
 	\addcontentsline{toc}{chapter}{Introduction}
 	\chaptermark{Introduction}
 
-	\input{dissertation/Introduction}
+	\input{dissertation/introduction}
 
 	\begin{refcontext}[sorting=nyt]
 		% Sort BIBLIOGRAPHY by alphabet (while CITATIONS are sorted by year)
@@ -107,7 +107,7 @@
 	
 	% Use footnote symbols instead of numbers
 	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-	% \footnotetext[1]{\:\protect\input{chapter1/Acknowledgments}}
+	% \footnotetext[1]{\:\protect\input{chapter1/acknowledgments}}
 	
 	% Switch back to the original footnote definition
 	\renewcommand{\thefootnote}{\thefootnoteorig}
@@ -117,7 +117,7 @@
 	\makeatother
 	\setcounter{footnote}{0}
 
-	\input{chapter1/Introduction}
+	\input{chapter1/introduction}
 
 	\begin{subappendices}
 		\label{sec:appendix1}
@@ -153,7 +153,7 @@
 	\label{diss:chapter2}
 	% Use footnote symbols instead of numbers
 	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-	% \footnotetext[1]{\:\protect\input{chapter2/Acknowledgments}}
+	% \footnotetext[1]{\:\protect\input{chapter2/acknowledgments}}
 	% Switch back to the original footnote definition
 	\renewcommand{\thefootnote}{\thefootnoteorig}
 	\makeatletter
@@ -168,7 +168,7 @@
 
 	\vspace{-3\bigskipamount}\textsf{\textit{\Large Joint with ...}} \bigskip
 
-	\input{chapter2/Introduction}
+	\input{chapter2/introduction}
 
 	\begin{subappendices}
 		\label{sec:appendix2}
@@ -205,7 +205,7 @@
 	\label{diss:chapter3}
 	% Use footnote symbols instead of numbers
 	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-	\footnotetext[1]{\:\protect\input{chapter3/Acknowledgments}}
+	\footnotetext[1]{\:\protect\input{chapter3/acknowledgments}}
 	% Switch back to the original footnote definition
 	\renewcommand{\thefootnote}{\thefootnoteorig}
 	\makeatletter
@@ -215,7 +215,7 @@
 	\setcounter{footnote}{0}
 	\vspace{-3\bigskipamount}\textsf{\textit{\Large Joint with ...}} \bigskip
 
-	\input{chapter3/Introduction.tex}
+	\input{chapter3/introduction.tex}
 
 	\begin{subappendices}
 		\label{sec:appendix}
@@ -236,7 +236,8 @@
 
 \clearpage
 
-\input{dissertation/Declaration.tex}
+% only for handing in
+\input{dissertation/declaration.tex}
 
 
 \end{document}
