@@ -100,9 +100,12 @@
 	\makeatletter
 	\renewcommand{\@makefntext}[1]{\@makefntextorig{#1}}
 	\makeatother
-	\chapter[Chapter1 Title]{Chapter1 Title%
+	\chapter
+	 [Chapter1 Title in the Table of Contents]
+	 {Full Chapter1 Title%
 	  % \setcounter{footnote}{1}\textsuperscript{\Large\fnsymbol{footnote}}%
-	}
+	 }
+    \chaptermark{Header Title of Chapter 1}
 	\label{diss:chapter1}
 	
 	% Use footnote symbols instead of numbers
@@ -157,10 +160,11 @@
 	\renewcommand{\@makefntext}[1]{\@makefntextorig{#1}}
 	\makeatother
 	\chapter
-	 [Chapter2 Title]
-	 {Chapter2 Title%
-	  % \setcounter{footnote}{1}\textsuperscript{\Large\fnsymbol{footnote}} % footnote mark for acknowledgements
+	 [Chapter2 Title in the Table of Contents]
+	 {Full Chapter2 Title%
+	  % \setcounter{footnote}{1}\textsuperscript{\Large\fnsymbol{footnote}}%
 	 }
+    \chaptermark{Header Title of Chapter 2}
 	\label{diss:chapter2}
 	% Use footnote symbols instead of numbers
 	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
@@ -220,10 +224,11 @@
 	\renewcommand{\@makefntext}[1]{\@makefntextorig{#1}}
 	\makeatother
 	\chapter
-	 [Chapter3 Title]
-	 {Chapter3 Title%
+	 [Chapter3 Title in the Table of Contents]
+	 {Full Chapter3 Title%
 	  % \setcounter{footnote}{1}\textsuperscript{\Large\fnsymbol{footnote}}%
 	 }
+    \chaptermark{Header Title of Chapter 3}
 	\label{diss:chapter3}
 	% Use footnote symbols instead of numbers
 	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
